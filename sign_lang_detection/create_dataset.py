@@ -29,8 +29,8 @@ def detect(save_img=False):
     bb_file_exists = 0
     ############################################################################
 
-    out, source, weights, view_img, save_txt, imgsz, opt.gest_class = \
-        opt.output, opt.source, opt.weights, opt.view_img, opt.save_txt, opt.img_size, opt.opt.gest_class
+    out, source, weights, view_img, save_txt, imgsz,  = \
+        opt.output, opt.source, opt.weights, opt.view_img, opt.save_txt, opt.img_size
     webcam = source == '0' or source.startswith('rtsp') or source.startswith('http') or source.endswith('.txt')
 
     # Initialize
@@ -122,8 +122,9 @@ def detect(save_img=False):
                             f.write(('%g ' * 5 + '\n') % (cls, *xywh))  # label format
 
         ########################################################################################################
-                    if create_ds:
+                    if opt.create_ds:
                         if recording == 1 and img_cnt < opt.pic_count: # r to start/stop recording
+                            xywh = (xyxy2xywh(torch.tensor(xyxy).view(1, 4)) / gn).view(-1).tolist()  # normalized xywh
                             if cnt == 0:  # on first contour save the image
                                 img_cnt += 1
                                 img_str = opt.img_dest + opt.gest_class + '/' + opt.gest_class + '_'+ str(img_cnt) + '.jpg'
@@ -194,7 +195,7 @@ def detect(save_img=False):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', nargs='+', type=str, default='yolov5s.pt', help='model.pt path(s)')
+    parser.add_argument('--weights', nargs='+', type=str, default='./runs/exp16_sl/weights/best.pt', help='model.pt path(s)')
     parser.add_argument('--source', type=str, default='inference/images', help='source')  # file/folder, 0 for webcam
     parser.add_argument('--output', type=str, default='inference/output', help='output folder')  # output folder
     parser.add_argument('--img-size', type=int, default=640, help='inference size (pixels)')
@@ -211,20 +212,14 @@ if __name__ == '__main__':
     ########################################################################################################
     parser.add_argument('--create-ds', action='store_true', help='create a custom dataset, with class --gest-class')
     parser.add_argument('--gest-class', type=str, default='NA', help='pick class to save with ---create-ds')
-    parser.add_argument('--label-dest', type=str, default='../sign_lang/labels/', help='label root used with --create-ds')
-    parser.add_argument('--img-dest', type=str, default='../sign_lang/images/', help='image root used with --create-ds')
-    parser.add_argument('--bb-img-dest', type=str, default='../sign_lang_bb/images/', help='image with bounding box root used with --create-ds')
+    parser.add_argument('--label-dest', type=str, default='../sign_lang2/labels/', help='label root used with --create-ds')
+    parser.add_argument('--img-dest', type=str, default='../sign_lang2/images/', help='image root used with --create-ds')
+    parser.add_argument('--bb-img-dest', type=str, default='../sign_lang2_bb/images/', help='image with bounding box root used with --create-ds')
     parser.add_argument('--pic-count', type=int, default=400, help='number of pictures to save when --create-ds is true')
     opt = parser.parse_args()
     print(opt)
 
-
-    # # recording = 0  # to turn on/of recording for datset creation
-    # # opt.gest_class = 0 # to save to a different gesture class
-    # label_dest = '../sign_lang/labels/'
-    # img_dest = '../sign_lang/images/'
-    # opt.bb_img_dest = '../sign_lang_bb/images/'
-    # img_cnt = 0
+    img_cnt = 0
 
     # dictionary used to convert class string to int, starting at 0
     letter_number_dict = {'a':0, 'b':1, 'c':2, 'd':3, 'e':4, 'f':5, 'g':6, 'h':7, 'i':8, 'j':9, 'k':10, 'l':11,
