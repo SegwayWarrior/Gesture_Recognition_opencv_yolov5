@@ -183,6 +183,10 @@ def cam_detect():
     roi_left = 10
     roi_right = 210
 
+    if opt.switch_side:
+        roi_left = 400
+        roi_right = 600
+
     # Intialize a frame count
     num_frames = 0
 
@@ -199,14 +203,15 @@ def cam_detect():
         roi_copy = frame.copy()
         roi_image = PIL.Image.fromarray(roi_copy, "RGB")
         enhancer = ImageEnhance.Contrast(roi_image)
-        roi_image = enhancer.enhance(1.5)
+        roi_image = enhancer.enhance(opt.contrast)
         enhancer = ImageEnhance.Brightness(roi_image)
-        roi_image = enhancer.enhance(1)
+        roi_image = enhancer.enhance(opt.brightness)
         roi_np = np.array(roi_image)
         roi_np = roi_np[:, :, ::-1].copy()
 
         roi = roi_np[roi_top:roi_bottom, roi_left:roi_right]
-        cv2.imshow("roi", roi)
+        if opt.show_roi:
+            cv2.imshow("roi", roi)
         roi2 = PIL.Image.fromarray(roi, "RGB")
 
         # Draw ROI Rectangle on frame copy
@@ -245,7 +250,11 @@ if __name__ == '__main__':
     parser.add_argument('--save-weights', type=str, default='', help='save results to *.txt')
     parser.add_argument('--test-image', type=str, default='', help='test the CNN on single image')
     parser.add_argument('--epochs', type=int, default=25, help='number of epochs')
+    parser.add_argument('--contrast', type=int, default=2.5, help='edit roi for better cnn recognition')
+    parser.add_argument('--brightness', type=int, default=.6, help='edit roi for better cnn recognition')
     parser.add_argument('--cam-detect', action='store_true', help='use model on default camera')
+    parser.add_argument('--switch-side', action='store_true', help='switch side for roi')
+    parser.add_argument('--show-roi', action='store_true', help='show roi after transformation')
 
     opt = parser.parse_args()
     print(opt)
