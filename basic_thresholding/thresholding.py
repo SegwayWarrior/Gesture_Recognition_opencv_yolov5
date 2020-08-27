@@ -107,8 +107,7 @@ if __name__ == '__main__':
     opt = parser.parse_args()
     print(opt)
 
-      # Backtround image that will be averaged together
-    background = None
+    background = None  # Backtround image that will be averaged together
     background_collect = 0  # Trigger and count to start collecting background
     background_cnt = 0
     background_weight = 0.5  # Start with a halfway point between 0 and 1 of accumulated weight
