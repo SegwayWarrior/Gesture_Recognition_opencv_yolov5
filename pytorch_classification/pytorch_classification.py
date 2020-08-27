@@ -143,8 +143,7 @@ def train_CNN(epochs, save_root):
     plt.title('Accuracy at the end of each epoch')
     plt.legend();
 
-    if save_root != '':
-        torch.save(CNNmodel.state_dict(), save_root)
+    torch.save(CNNmodel.state_dict(), save_root)
 
 def load_weights(weights_root):
     if torch.cuda.is_available():
@@ -245,9 +244,9 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--load-weights', nargs='+', type=str, default='new_ssl3_CNNModel_ep25_personal.pt', help='model.pt path(s)')
     parser.add_argument('--data-split', action='store_true', help='use to split data')
-    parser.add_argument('--split-root', nargs='+', type=str, default=['../Data/Sign-Language-Digits-Dataset-master/Sign-Language-Digits-Dataset-master/Dataset', '../Data/sl3_custom/'], help='2 entries (data_root data_dest)')
-    parser.add_argument('--train-data',  type=str, default='', help='enter data root to train')
-    parser.add_argument('--save-weights', type=str, default='', help='save results to *.txt')
+    parser.add_argument('--split-root', nargs='+', type=str, default='', help='2 entries (data_root data_dest)')
+    parser.add_argument('--train-data',  type=str, default='gesture_numbers_dk', help='triggers training and declares data location')
+    parser.add_argument('--save-weights', type=str, default='default.pt', help='save results to *.pt')
     parser.add_argument('--test-image', type=str, default='', help='test the CNN on single image')
     parser.add_argument('--epochs', type=int, default=25, help='number of epochs')
     parser.add_argument('--contrast', type=int, default=2.5, help='edit roi for better cnn recognition')
