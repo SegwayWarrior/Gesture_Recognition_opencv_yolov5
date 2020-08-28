@@ -4,8 +4,8 @@
 <img src="./sign_lang_detection/sl_run.gif" width='600'/>
 
 ##   
-<img src="./basic_thresholding/finger_count.gif" width="300" height='250'/>
-<img src="./pytorch_classification/classification.gif" width="300" height='250'/>
+<img src="./basic_thresholding/finger_count.gif" width="300" height='250'/> <img src="./pytorch_classification/classification.gif" width="300" height='250'/>
+
 
 
 
