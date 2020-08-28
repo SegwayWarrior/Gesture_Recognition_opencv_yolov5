@@ -90,7 +90,7 @@ def count_fingers(thresholded): # Count fingers based on threshold and circular 
         elif count == 2 and thumb and pinky:        gesture = 'pinky and thumb'
         elif count == 2 and thumb and not pinky:    gesture ='L'
         elif count == 2 and not thumb and pinky:     gesture = 'horns'
-        elif count == 3 and thumb and not pinky:    gesture = 'three_thumb'
+        elif count == 3 and thumb and not pinky:    gesture = 'three thumb'
         elif count == 3 and pinky and thumb:        gesture = 'rock out!'
         else: gesture = str(count)
 
