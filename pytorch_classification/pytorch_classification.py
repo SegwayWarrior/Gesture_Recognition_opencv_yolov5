@@ -242,7 +242,7 @@ if __name__ == '__main__':
     warnings.filterwarnings("ignore")  # Filter  warnings
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--load-weights', nargs='+', type=str, default='new_ssl3_CNNModel_ep25_personal.pt', help='model.pt path(s)')
+    parser.add_argument('--load-weights', nargs='+', type=str, default='gesture_numbers_CNNModel_ep25_personal.pt', help='model.pt path(s)')
     parser.add_argument('--data-split', action='store_true', help='use to split data')
     parser.add_argument('--split-root', nargs='+', type=str, default='', help='2 entries (data_root data_dest)')
     parser.add_argument('--train-data',  type=str, default='gesture_numbers_dk', help='triggers training and declares data location')
