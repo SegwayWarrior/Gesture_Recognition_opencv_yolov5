@@ -17,3 +17,7 @@ This project was created using classic  classification techniques with machine l
 - "--switch-side" to switch the roi to the other side of the screen.
 - "--show-roi" to show the roi.
 - The original ASL datset can be found here: https://www.kaggle.com/ardamavi/sign-language-digits-dataset
+
+## Results
+Below are graphs of the accuracy and loss after each epoch, for the training and validation data.
+<img src="Accuracy.png" width='350'> <img src="Loss.png" width='350'>

@@ -6,6 +6,7 @@ This project uses the latest version of Yolo (You only look once) YOLOv5, which 
 
 ## Details
 - An example run, after downloading the weights (see below): "python create_dataset.py --weights exp16_sl_best.pt  --source 0"
+- To train your own model, run train.py and create your own .yaml file in data.  Also edit the number of classes in the model you're using as instructed in the yolov5 link above.
 - create_dataset.py is a modified version of detect.py.  The parts that are modified are separated by lines of hashes.  The arguments shown below are in addition to the ones from detect.py.
 - "--create-ds" tells the program to create a dataset.  If this is not called, the program runs the same as detect.py.
 - "--gest-class CLASS" declares which class to save to.  The class directory must already be created.  If you are not saving the classes as integers, as in my case, you'll need a dictionary to convert each string to an integer, starting at 0. Default value is "NA".
