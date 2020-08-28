@@ -1,10 +1,10 @@
 # Basic Thresholding
 <img src="finger_count.gif" />
 
-# Overview
+## Overview
 This project uses openCV to create a threshold image of the hand (top right image), then applies a circular mask to count the contours of extended fingers (bottom right image).
 
-# Details
+## Details
 - The default region of interest (roi) is on the left side of the screen.  If you'd like to move the roi to the other side, use "--switch-side" .
 - First the background of the roi must be averaged over 60 frames to differentiate the hand when it's present.  Press 'b' at any time to set the background, making sure your hand is clear.
 - Different lighting and other factors can change the tolerance needed on the threshold.  To change this, use "--threshold VALUE" where the default value is 7.
