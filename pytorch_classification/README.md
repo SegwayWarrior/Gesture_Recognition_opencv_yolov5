@@ -2,7 +2,7 @@
 <img src="classification.gif">
 
 ## Overview
-This project was created using classic machine learning techniques using pytorch.  Six classes from an American Sign Language dataset were used to recognize the numbers 0 - 5.  Notice image classification is different from object detection in that the part being classified must be the primary object in the image, which is why we need a region of interest (roi) for classifying from a camera.  
+This project was created using classic  classification techniques with machine learning in pytorch.  Six classes from an American Sign Language dataset were used to recognize the numbers 0 - 5.  Notice image classification is different from object detection in that the part being classified must be the primary object in the image, which is why we need a region of interest (roi) for classifying from a camera.  
 
 ## Details
 - For information on how this Convolutional Neural Network (CNN) was constructed, check out the Machine Learning Basics section in the main page's README.
@@ -16,3 +16,4 @@ This project was created using classic machine learning techniques using pytorch
 - Based on lighting and other factors, changing the brightness and contrast of the roi image may be useful.  To do so use, "--contrast CONTRAST" and "--brightness BRIGHTNESS" where the default values are both 1, meaning no change to original roi.
 - To switch the roi to the other side of the screen, use "--switch-side".
 - To show the roi, use "--show-roi"
+- The original ASL datset can be found here: https://www.kaggle.com/ardamavi/sign-language-digits-dataset

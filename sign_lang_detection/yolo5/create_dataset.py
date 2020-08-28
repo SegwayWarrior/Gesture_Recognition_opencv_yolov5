@@ -212,8 +212,8 @@ if __name__ == '__main__':
     ########################################################################################################
     parser.add_argument('--create-ds', action='store_true', help='create a custom dataset, with class --gest-class')
     parser.add_argument('--gest-class', type=str, default='NA', help='pick class to save with ---create-ds')
-    parser.add_argument('--label-dest', type=str, default='../sign_lang2/labels/', help='label root used with --create-ds')
-    parser.add_argument('--img-dest', type=str, default='../sign_lang2/images/', help='image root used with --create-ds')
+    parser.add_argument('--label-dest', type=str, default='', help='label root used with --create-ds')
+    parser.add_argument('--img-dest', type=str, default='', help='image root used with --create-ds')
     parser.add_argument('--bb-img-dest', type=str, default='../sign_lang2_bb/images/', help='image with bounding box root used with --create-ds')
     parser.add_argument('--pic-count', type=int, default=400, help='number of pictures to save when --create-ds is true')
     opt = parser.parse_args()
