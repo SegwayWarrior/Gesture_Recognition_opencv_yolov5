@@ -6,6 +6,7 @@ This project uses the latest version of Yolo (You only look once) YOLOv5, which 
 
 ## Details
 - An example run, after downloading the weights (see below): "python create_dataset.py --weights exp16_sl_best.pt  --source 0"
+- The letters "J" and "Z" were changed since they both require drawing letters in the air instead of making a static gesture.
 - To train your own model, run train.py and create your own .yaml file in data.  Also edit the number of classes in the model you're using as instructed in the yolov5 link above.
 - create_dataset.py is a modified version of detect.py.  The parts that are modified are separated by lines of hashes.  The arguments shown below are in addition to the ones from detect.py.
 - "--create-ds" tells the program to create a dataset.  If this is not called, the program runs the same as detect.py.
