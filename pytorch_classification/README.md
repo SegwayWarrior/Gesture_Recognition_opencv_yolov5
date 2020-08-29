@@ -2,7 +2,7 @@
 <img src="classification.gif">
 
 ## Overview
-This project was created using classic  classification techniques with machine learning in pytorch.  Six classes from an American Sign Language dataset were used to recognize the numbers 0 - 5.  Notice image classification is different from object detection in that the part being classified must be the primary object in the image, which is why we need a region of interest (roi) for classifying from a camera.  For information on how this Convolutional Neural Network (CNN) was constructed, check out the Machine Learning Basics section in the main page's README.
+This project was created using classification techniques with machine learning in pytorch.  Six classes from an American Sign Language dataset were used to recognize the numbers 0 - 5.  Notice image classification is different from object detection in that the part being classified must be the primary object in the image, which is why we need a region of interest (roi) for classifying from a camera.
 
 ## Details
 - An example run, after downloading the weights (see below): "python pytorch_classification.py --cam-detect --show-roi"
@@ -16,8 +16,8 @@ This project was created using classic  classification techniques with machine l
 - "--contrast CONTRAST" and "--brightness BRIGHTNESS" to change the contrast and brightness of the roi image. Based on lighting and other factors, this may cause better results.  The default values are both 1, meaning no change to original roi.
 - "--switch-side" to switch the roi to the other side of the screen.
 - "--show-roi" to show the roi.
-- The weights file can be downloaded at: https://drive.google.com/file/d/1Hqf9vP2ywzi6o3-R_o15koSRBm_kA__p/view?usp=sharing
-- The original ASL datset can be found at: https://www.kaggle.com/ardamavi/sign-language-digits-dataset
+- The [weights](https://drive.google.com/file/d/1Hqf9vP2ywzi6o3-R_o15koSRBm_kA__p/view?usp=sharing) file can be downloaded there.
+- The original ASL [dataset](https://www.kaggle.com/ardamavi/sign-language-digits-dataset) can be found there.
 
 ## Results
 Below are graphs of the accuracy and loss after each epoch, for the training and validation data.
