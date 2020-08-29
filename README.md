@@ -1,9 +1,10 @@
 # Hand Gesture Recognition with OpenCV, Pytorch, and YOLOv5
 
-<img src="./sign_lang_detection/sl_run.gif" width='600'/>
+
+![Sign Language Detection](all_three.gif)
 
 ##   
-<img src="./basic_thresholding/finger_count.gif" width="300" height='250'/> <img src="./pytorch_classification/classification.gif" width="300" height='250'/>
+
 
 ## Overview
 

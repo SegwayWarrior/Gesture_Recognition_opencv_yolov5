@@ -25,5 +25,4 @@ This project uses the latest version of YOLO (You Only Look Once) [YOLOv5](https
 
 ## Results
 Results from training the sign language model provided by YOLOv5
-
-<img src="results.png" width="600">
+![Results](results.png)

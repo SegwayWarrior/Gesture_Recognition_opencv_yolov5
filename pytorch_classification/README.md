@@ -21,4 +21,6 @@ This project was created using classification techniques with machine learning i
 
 ## Results
 Below are graphs of the accuracy and loss after each epoch, for the training and validation data.
-<img src="Accuracy.png" width='350'> <img src="Loss.png" width='350'>
+![Accuracy](Accuracy.png)
+
+![Loss](Loss.png)
