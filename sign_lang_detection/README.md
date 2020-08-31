@@ -6,6 +6,7 @@ This project uses the latest version of YOLO (You Only Look Once) [YOLOv5](https
 
 ## Details
 - An example run, after downloading the weights (see below): "python create_dataset.py --weights exp16_sl_best.pt  --source 0"
+- When creating a dataset, you can start and stop recording by pressing the 'r' key.
 - This project runs best with a graphics card.  My computer has an NVIDIA 1060 6gb.  My laptop with no gpu had trouble running this smoothly.  A lighter, faster model could be trained with yolo5s.yaml, instead of yolo5l.yaml, but with probable loss in accuracy.
 - The letters "J" and "Z" were changed since they both require drawing letters in the air instead of making a static gesture.
 - To train your own model, run train.py and create your own .yaml file in data.  Also edit the number of classes in the model you're using as instructed in the yolov5 link above.
